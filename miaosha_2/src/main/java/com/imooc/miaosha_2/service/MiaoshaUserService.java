@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.imooc.miaosha_2.dao.MiaoshaUserDao;
@@ -16,7 +17,7 @@ import com.imooc.miaosha_2.result.CodeMsg;
 import com.imooc.miaosha_2.util.MD5Util;
 import com.imooc.miaosha_2.util.UUIDUtil;
 import com.imooc.miaosha_2.vo.LoginVo;
-
+@Component
 @Service
 public class MiaoshaUserService {
 	

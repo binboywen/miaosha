@@ -59,7 +59,7 @@ public class SampleController {
     @RequestMapping("/redis/get")
     @ResponseBody
     public Result<User> redisGet() {
-    	User  user  = redisService.get(UserKey.getById, ""+1, User.class);
+    	User user  = redisService.get(UserKey.getById, ""+1, User.class);
         return Result.success(user);
     }
     

@@ -8,8 +8,10 @@ import com.imooc.miaosha_2.dao.UserDao;
 import com.imooc.miaosha_2.domain.User;
 @Service
 public class UserService {
+
 	@Autowired
 	UserDao userDao;
+
 	public User getById(int id) {
 		 return userDao.getById(id);
 	}

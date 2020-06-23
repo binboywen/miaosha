@@ -12,9 +12,9 @@ import com.imooc.miaosha_2.result.Result;
 @RequestMapping("/demo")
 public class DemoController {
 		//1.rest api json输出， 2.页面模板
-	 	@RequestMapping("/")
+	 	@RequestMapping("/tset")
 	    @ResponseBody
-	    String home() {
+	    String test() {
 	        return "Hello World!";
 	    }
 	 	//1.rest api json输出 2.页面
@@ -31,12 +31,12 @@ public class DemoController {
 	 		return Result.error(CodeMsg.SERVER_ERROR);
 	 		//return new Result(500102, "XXX");
 	    }
-	 	
+
+	    //页面模板
 	 	@RequestMapping("/thymeleaf")
 	    public String  thymeleaf(Model model) {
-	 		model.addAttribute("name", "Joshua");//name占位符号，传过去的值为Joshua
-
-	 		return "hello";///thymeleaf/hello.html
+	 		model.addAttribute("name", "闻涛");//name占位符号，传过去的值为Joshua
+	 		return "hello";///templates/hello.html
 	    }
 	 	
 }

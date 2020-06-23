@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="miaosha (1)" />
         <module name="miaosha_1" />
         <module name="miaosha" />
+        <module name="miaoshatest_01" />
       </profile>
     </annotationProcessing>
   </component>

@@ -15,9 +15,9 @@ public class RedisService {
 	JedisPool jedisPool;
 	
 	/**
-	 * 获取当个对象
+	 * 获取单个对象
 	 * */
-	public <T> T get(KeyPrefix prefix, String key,  Class<T> clazz) {
+	public <T> T get(KeyPrefix prefix, String key, Class<T> clazz) {
 		 Jedis jedis = null;
 		 try {
 			 jedis =  jedisPool.getResource();
@@ -45,9 +45,12 @@ public class RedisService {
 			//生成真正的key
 			 String realKey  = prefix.getPrefix() + key;
 			 int seconds =  prefix.expireSeconds();
+
 			 if(seconds <= 0) {
+			 	//永不过期
 				 jedis.set(realKey, str);
 			 }else {
+			 	//seconds为过期时间
 				 jedis.setex(realKey, seconds, str);
 			 }
 			 return true;
