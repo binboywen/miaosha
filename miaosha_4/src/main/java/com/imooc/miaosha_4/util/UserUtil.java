@@ -7,6 +7,9 @@ import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -81,7 +84,7 @@ public class UserUtil {
 			JSONObject jo = JSON.parseObject(response);
 			String token = jo.getString("data");
 			System.out.println("create token : " + user.getId());
-			
+
 			String row = user.getId()+","+token;
 			raf.seek(raf.length());
 			raf.write(row.getBytes());

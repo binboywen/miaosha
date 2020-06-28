@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.wentao.miaosha.vo.GoodsDetailVo;
 import com.wentao.miaosha.vo.GoodsVo;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -28,7 +30,7 @@ import com.wentao.miaosha.service.MiaoshaUserService;
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
-
+	private static Logger log = LoggerFactory.getLogger(GoodsController.class);
 	@Autowired
 	MiaoshaUserService userService;
 	
@@ -119,6 +121,8 @@ public class GoodsController {
 										HttpServletResponse response,
 										Model model, MiaoshaUser user,
 										@PathVariable("goodsId")long goodsId) {
+		if(user == null)
+    		log.info("user Empty");
     	GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
     	long startAt = goods.getStartDate().getTime();
     	long endAt = goods.getEndDate().getTime();

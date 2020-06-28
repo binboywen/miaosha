@@ -11,6 +11,7 @@ public class MiaoshaUser {
 	private Date registerDate;
 	private Date lastLoginDate;
 	private Integer loginCount;
+
 	public Long getId() {
 		return id;
 	}

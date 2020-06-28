@@ -6,7 +6,9 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.wentao.miaosha.domain.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface UserDao {
 	

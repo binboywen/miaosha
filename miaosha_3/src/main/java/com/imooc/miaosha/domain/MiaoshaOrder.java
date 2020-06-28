@@ -5,6 +5,7 @@ public class MiaoshaOrder {
 	private Long userId;
 	private Long  orderId;
 	private Long goodsId;
+
 	public Long getId() {
 		return id;
 	}

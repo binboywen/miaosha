@@ -3,10 +3,12 @@ package com.imooc.miaosha_2.controller;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.imooc.miaosha_2.domain.MiaoshaUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,7 +30,11 @@ public class LoginController {
 	RedisService redisService;
 	
     @RequestMapping("/to_login")
-    public String toLogin() {
+    public String toLogin(Model model,MiaoshaUser user) {
+        if(user != null) {
+            model.addAttribute("user",user);
+            return "goods_list";
+        }
         return "login";
     }
     

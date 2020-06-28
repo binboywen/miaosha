@@ -8,7 +8,9 @@ import org.apache.ibatis.annotations.SelectKey;
 
 import com.imooc.miaosha_4.domain.MiaoshaOrder;
 import com.imooc.miaosha_4.domain.OrderInfo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface OrderDao {
 	
@@ -17,7 +19,7 @@ public interface OrderDao {
 
 	@Insert("insert into order_info(user_id, goods_id, goods_name, goods_count, goods_price, order_channel, status, create_date)values("
 			+ "#{userId}, #{goodsId}, #{goodsName}, #{goodsCount}, #{goodsPrice}, #{orderChannel},#{status},#{createDate} )")
-	@SelectKey(keyColumn="id", keyProperty="id", resultType=long.class, before=false, statement="select last_insert_id()")
+	@SelectKey(keyColumn="id", keyProperty="id", resultType=long.class, before=false, statement="SELECT LAST_INSERT_ID() AS id")
 	public long insert(OrderInfo orderInfo);
 	
 	@Insert("insert into miaosha_order (user_id, goods_id, order_id)values(#{userId}, #{goodsId}, #{orderId})")

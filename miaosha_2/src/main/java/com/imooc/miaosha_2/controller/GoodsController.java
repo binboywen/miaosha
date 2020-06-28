@@ -21,6 +21,8 @@ public class GoodsController {
 	
     @RequestMapping("/to_list")
     public String list(Model model,MiaoshaUser user) {
+    	if(user == null)
+    		return "login";
     	model.addAttribute("user", user);
         return "goods_list";
     }

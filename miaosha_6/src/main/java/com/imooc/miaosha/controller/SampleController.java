@@ -33,21 +33,21 @@ public class SampleController {
 //		sender.sendHeader("hello,imooc");
 //        return Result.success("Hello，world");
 //    }
-//	
+//
 //	@RequestMapping("/mq/fanout")
 //    @ResponseBody
 //    public Result<String> fanout() {
 //		sender.sendFanout("hello,imooc");
 //        return Result.success("Hello，world");
 //    }
-//	
+//
 //	@RequestMapping("/mq/topic")
 //    @ResponseBody
 //    public Result<String> topic() {
 //		sender.sendTopic("hello,imooc");
 //        return Result.success("Hello，world");
 //    }
-//	
+//
 //	@RequestMapping("/mq")
 //    @ResponseBody
 //    public Result<String> mq() {
@@ -104,6 +104,4 @@ public class SampleController {
     	redisService.set(UserKey.getById, ""+1, user);//UserKey:id1
         return Result.success(true);
     }
-    
-    
 }

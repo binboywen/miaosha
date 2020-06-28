@@ -1,6 +1,8 @@
 package com.wentao.miaosha.controller;
 
 import com.wentao.miaosha.vo.GoodsVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +25,7 @@ import com.wentao.miaosha.service.OrderService;
 @Controller
 @RequestMapping("/miaosha")
 public class MiaoshaController {
-
+	private static Logger log = LoggerFactory.getLogger(MiaoshaController.class);
 	@Autowired
 	MiaoshaUserService userService;
 	
@@ -52,6 +54,7 @@ public class MiaoshaController {
     		@RequestParam("goodsId")long goodsId) {
     	model.addAttribute("user", user);
     	if(user == null) {
+    		log.info("user empty");
     		return Result.error(CodeMsg.SESSION_ERROR);    	}
     	//判断库存
     	GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);//10个商品，req1 req2

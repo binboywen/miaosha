@@ -8,6 +8,7 @@ public class Goods {
 	private String goodsDetail;
 	private Double goodsPrice;
 	private Integer goodsStock;
+
 	public Long getId() {
 		return id;
 	}

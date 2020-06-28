@@ -31,7 +31,8 @@ public class MQConfig {
 	public Queue queue() {
 		return new Queue(QUEUE, true);
 	}
-	
+	@Bean
+	public Queue miaosha_queue(){return new Queue(MIAOSHA_QUEUE,true);}
 	/**
 	 * Topic模式 交换机Exchange
 	 * */

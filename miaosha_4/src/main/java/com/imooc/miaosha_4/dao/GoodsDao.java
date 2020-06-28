@@ -9,7 +9,9 @@ import org.apache.ibatis.annotations.Update;
 
 import com.imooc.miaosha_4.domain.MiaoshaGoods;
 import com.imooc.miaosha_4.vo.GoodsVo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface GoodsDao {
 	

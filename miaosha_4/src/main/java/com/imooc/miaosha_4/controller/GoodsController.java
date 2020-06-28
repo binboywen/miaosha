@@ -28,12 +28,12 @@ public class GoodsController {
 	GoodsService goodsService;
 	
 	/**
-	 * QPS:1267
+	 * QPS:3760
 	 * 5000 * 10
 	 * */
     @RequestMapping(value="/to_list")
     public String list(Model model,MiaoshaUser user) {
-    	model.addAttribute("user", user);
+    	//model.addAttribute("user", user);
     	List<GoodsVo> goodsList = goodsService.listGoodsVo();
     	model.addAttribute("goodsList", goodsList);
     	 return "goods_list";

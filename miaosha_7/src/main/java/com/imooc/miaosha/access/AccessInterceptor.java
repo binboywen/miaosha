@@ -48,8 +48,7 @@ public class AccessInterceptor  extends HandlerInterceptorAdapter{
 					render(response, CodeMsg.SESSION_ERROR);
 					return false;}
 				key += "_" + user.getId();
-			}else {
-				//do nothing
+			}else {//do nothing
 			}
 			AccessKey ak = AccessKey.withExpire(seconds);
 			Integer count = redisService.get(ak, key, Integer.class);
