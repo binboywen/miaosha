@@ -58,6 +58,7 @@ public class GoodsController {
     	model.addAttribute("user", user);
     	//取缓存
     	String html = redisService.get(GoodsKey.getGoodsList, "", String.class);
+    	double d = 3.14D;
     	if(!StringUtils.isEmpty(html)) {
     		return html;
     	}

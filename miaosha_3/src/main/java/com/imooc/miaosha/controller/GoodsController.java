@@ -61,5 +61,4 @@ public class GoodsController {
     	model.addAttribute("remainSeconds", remainSeconds);
         return "goods_detail";
     }
-    
 }

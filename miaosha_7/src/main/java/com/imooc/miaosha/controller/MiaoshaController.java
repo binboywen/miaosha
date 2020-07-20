@@ -92,7 +92,7 @@ public class MiaoshaController implements InitializingBean {
 	/**
 	 * QPS:1306
 	 * 5000 * 10
-	 * QPS: 2114
+	 * QPS: 9000
 	 * */
     @RequestMapping(value="/{path}/do_miaosha", method=RequestMethod.POST)
     @ResponseBody
