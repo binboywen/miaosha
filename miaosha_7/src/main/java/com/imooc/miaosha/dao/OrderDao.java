@@ -9,7 +9,9 @@ import org.apache.ibatis.annotations.SelectKey;
 
 import com.imooc.miaosha.domain.MiaoshaOrder;
 import com.imooc.miaosha.domain.OrderInfo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface OrderDao {
 	
